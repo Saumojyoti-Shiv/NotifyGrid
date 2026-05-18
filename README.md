@@ -27,3 +27,35 @@ NotifyGrid is a high-performance, microservices-based Bulk SMS Service System de
 </div>
 
 ---
+
+## 🏗️ Architecture
+
+NotifyGrid follows a decoupled microservices architecture coordinated via a centralized Discovery Server and API Gateway.
+
+```mermaid
+graph TD
+    Client[Web/API Client] --> Gateway[API Gateway]
+    
+    subgraph "Core Services"
+        Gateway --> Auth[Auth Service]
+        Gateway --> Campaign[Campaign Service]
+        Gateway --> Contact[Contact Service]
+    end
+    
+    subgraph "Processing & Messaging"
+        Campaign --> MQ[RabbitMQ]
+        MQ --> Msg[Messaging Service]
+        Msg --> Provider[External SMS Gateway]
+    end
+    
+    subgraph "Monitoring & Billing"
+        Provider --> Report[Delivery Report Service]
+        Msg --> Billing[Billing Service]
+        Report --> Dashboard[Real-time Dashboard]
+    end
+    
+    subgraph "Support"
+        Services[All Services] --> Eureka[Discovery Server]
+        Services --> DB[(PostgreSQL)]
+    end
+```
