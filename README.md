@@ -42,19 +42,22 @@ graph TD
         Gateway --> Contact[Contact Service]
     end
     
-    subgraph "Processing & Messaging"
-        Campaign --> MQ[RabbitMQ]
+    subgraph "Scheduling & Processing"
+        Campaign --> Scheduler[Scheduler Service]
+        Scheduler --> MQ[RabbitMQ]
         MQ --> Msg[Messaging Service]
         Msg --> Provider[External SMS Gateway]
     end
     
-    subgraph "Monitoring & Billing"
+    subgraph "Monitoring & Notifications"
         Provider --> Report[Delivery Report Service]
-        Msg --> Billing[Billing Service]
         Report --> Dashboard[Real-time Dashboard]
+        Msg --> Billing[Billing Service]
+        Report --> Notify[Notification Service]
+        Notify --> Client
     end
     
-    subgraph "Support"
+    subgraph "Infrastructure"
         Services[All Services] --> Eureka[Discovery Server]
         Services --> DB[(PostgreSQL)]
     end
