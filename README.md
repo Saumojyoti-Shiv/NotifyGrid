@@ -87,3 +87,32 @@ graph TD
 
 ---
 
+## 🚀 Getting Started
+
+### Prerequisites
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+- [Java 23 JDK](https://openjdk.org/projects/jdk/23/)
+- [Python 3.x](https://www.python.org/)
+
+### One-Command Start
+NotifyGrid includes an orchestration script to start the entire ecosystem (Infrastructure, Microservices, and Frontend) with one command:
+
+```bash
+python run_system.py
+```
+
+### 📱 Quick Demo
+Once the system is running:
+1.  **Dashboard:** Navigate to `http://localhost:8000`.
+2.  **Eureka:** Monitor service health at `http://localhost:8761`.
+3.  **Workflow:** 
+    - Upload a CSV of contacts in the **Contact Service**.
+    - Create a new **Campaign** and set the schedule.
+    - View real-time **Delivery Reports** as messages are processed.
+
+---
+
+<div align="center">
+Made with ❤️ for the Modern Web
+</div>
+
