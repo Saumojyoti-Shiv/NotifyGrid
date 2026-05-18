@@ -15,3 +15,15 @@ NotifyGrid is a high-performance, microservices-based Bulk SMS Service System de
 [Features](#-key-pillars) • [Architecture](#-architecture) • [Quick Start](#-getting-started) • [Demo](#-quick-demo)
 
 </div>
+
+## ✨ Key Pillars
+
+<div align="center">
+
+| 🛡️ Secure | 🚀 Scalable | 📊 Insightful |
+| :--- | :--- | :--- |
+| JWT-based RBAC and encrypted communication channels. | Independent microservices ready for horizontal growth. | Real-time delivery reports and billing tracking. |
+
+</div>
+
+---
