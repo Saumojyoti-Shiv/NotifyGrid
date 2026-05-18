@@ -112,9 +112,4 @@ Once the system is running:
     - Create a new **Campaign** and set the schedule.
     - View real-time **Delivery Reports** as messages are processed.
 
----
-
-<div align="center">
-Made with ❤️ for the Modern Web
-</div>
 
