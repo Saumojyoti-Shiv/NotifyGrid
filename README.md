@@ -62,3 +62,28 @@ graph TD
         Services --> DB[(PostgreSQL)]
     end
 ```
+
+## 🛠️ Tech Stack
+
+- **Language:** Java 23 (JDK 23)
+- **Framework:** Spring Boot 4.0.6, Spring Cloud 2025.1.1
+- **Messaging:** RabbitMQ (Asynchronous processing)
+- **Database:** PostgreSQL (Relational persistence)
+- **DevOps:** Docker & Docker Compose
+- **Scripting:** Python 3.x (System Orchestration)
+
+### 📡 Service Map
+
+| Service | Port | Responsibility |
+| :--- | :--- | :--- |
+| **Discovery Server** | `8761` | Service registration and discovery (Eureka) |
+| **API Gateway** | `8080` | Centralized request routing |
+| **Auth Service** | `8081` | JWT-based authentication and security |
+| **Campaign Service** | `8084` | Campaign lifecycle and scheduling |
+| **Scheduler Service** | `8089` | Triggering scheduled campaigns |
+| **Messaging Service** | `8085` | Queue processing and provider integration |
+| **Notification Service** | `8088` | Alerts and completion notifications |
+| **Frontend** | `8000` | Management Dashboard |
+
+---
+
