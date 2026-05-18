@@ -1,3 +1,23 @@
+# NotifyGrid README Implementation Plan
+
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** Create a high-impact, modern, and minimalist README.md for NotifyGrid.
+
+**Architecture:** The README will use a centered hero section, Mermaid.js for architecture visualization, and a clean structured layout to present the microservices ecosystem.
+
+**Tech Stack:** Markdown, Mermaid.js, GitHub Badges.
+
+---
+
+### Task 1: Initialize README and Hero Section
+
+**Files:**
+- Create: `README.md`
+
+- [ ] **Step 1: Create the base README with Hero Header**
+
+```markdown
 <div align="center">
 
 # 🌌 NotifyGrid
@@ -15,7 +35,30 @@ NotifyGrid is a high-performance, microservices-based Bulk SMS Service System de
 [Features](#-key-pillars) • [Architecture](#-architecture) • [Quick Start](#-getting-started) • [Demo](#-quick-demo)
 
 </div>
+```
 
+- [ ] **Step 2: Verify file creation**
+
+Run: `ls README.md`
+Expected: File exists.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add README.md
+git commit -m "docs: initialize NotifyGrid README with hero section"
+```
+
+---
+
+### Task 2: Add Core Vision and Key Pillars
+
+**Files:**
+- Modify: `README.md`
+
+- [ ] **Step 1: Add the "Key Pillars" section**
+
+```markdown
 ## ✨ Key Pillars
 
 <div align="center">
@@ -27,7 +70,25 @@ NotifyGrid is a high-performance, microservices-based Bulk SMS Service System de
 </div>
 
 ---
+```
 
+- [ ] **Step 2: Commit**
+
+```bash
+git add README.md
+git commit -m "docs: add core vision and key pillars to README"
+```
+
+---
+
+### Task 3: Implement Architecture Diagram (Mermaid.js)
+
+**Files:**
+- Modify: `README.md`
+
+- [ ] **Step 1: Add the Mermaid.js architecture diagram**
+
+```markdown
 ## 🏗️ Architecture
 
 NotifyGrid follows a decoupled microservices architecture coordinated via a centralized Discovery Server and API Gateway.
@@ -42,27 +103,44 @@ graph TD
         Gateway --> Contact[Contact Service]
     end
     
-    subgraph "Scheduling & Processing"
-        Campaign --> Scheduler[Scheduler Service]
-        Scheduler --> MQ[RabbitMQ]
+    subgraph "Processing & Messaging"
+        Campaign --> MQ[RabbitMQ]
         MQ --> Msg[Messaging Service]
         Msg --> Provider[External SMS Gateway]
     end
     
-    subgraph "Monitoring & Notifications"
+    subgraph "Monitoring & Billing"
         Provider --> Report[Delivery Report Service]
-        Report --> Dashboard[Real-time Dashboard]
         Msg --> Billing[Billing Service]
-        Report --> Notify[Notification Service]
-        Notify --> Client
+        Report --> Dashboard[Real-time Dashboard]
     end
     
-    subgraph "Infrastructure"
+    subgraph "Support"
         Services[All Services] --> Eureka[Discovery Server]
         Services --> DB[(PostgreSQL)]
     end
 ```
 
+---
+```
+
+- [ ] **Step 2: Commit**
+
+```bash
+git add README.md
+git commit -m "docs: add architecture diagram to README"
+```
+
+---
+
+### Task 4: Tech Stack and Service Map
+
+**Files:**
+- Modify: `README.md`
+
+- [ ] **Step 1: Add Tech Stack and Service Map tables**
+
+```markdown
 ## 🛠️ Tech Stack
 
 - **Language:** Java 23 (JDK 23)
@@ -79,16 +157,30 @@ graph TD
 | **Discovery Server** | `8761` | Service registration and discovery (Eureka) |
 | **API Gateway** | `8080` | Centralized request routing |
 | **Auth Service** | `8081` | JWT-based authentication and security |
-| **Contact Service** | `8083` | Taxpayer contact and group management |
 | **Campaign Service** | `8084` | Campaign lifecycle and scheduling |
-| **Scheduler Service** | `8089` | Triggering scheduled campaigns |
 | **Messaging Service** | `8085` | Queue processing and provider integration |
-| **Delivery Report Service** | `8086` | Real-time tracking and delivery logs |
-| **Notification Service** | `8088` | Alerts and completion notifications |
 | **Frontend** | `8000` | Management Dashboard |
 
 ---
+```
 
+- [ ] **Step 2: Commit**
+
+```bash
+git add README.md
+git commit -m "docs: add tech stack and service map to README"
+```
+
+---
+
+### Task 5: Getting Started and Quick Demo
+
+**Files:**
+- Modify: `README.md`
+
+- [ ] **Step 1: Add Quick Start and Demo sections**
+
+```markdown
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -117,4 +209,11 @@ Once the system is running:
 <div align="center">
 Made with ❤️ for the Modern Web
 </div>
+```
 
+- [ ] **Step 2: Commit**
+
+```bash
+git add README.md
+git commit -m "docs: finalize README with getting started and demo sections"
+```
